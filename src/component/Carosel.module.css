@@ -1,0 +1,35 @@
+
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }       
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+.img{
+    animation: fadeOut 2s;
+    position: absolute;
+    opacity: 0;
+    max-width: 99vw;
+    max-height: 99vh;
+}
+
+.active{
+    animation: fadeIn 2s;
+    max-width: 99vw;
+    max-height: 99vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
