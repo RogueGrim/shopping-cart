@@ -19,17 +19,19 @@
     animation: fadeOut 2s;
     position: absolute;
     opacity: 0;
-    max-width: 99vw;
-    max-height: 99vh;
+    width: 99vw;
+    height: 90.5vh;
 }
 
 .active{
     animation: fadeIn 2s;
-    max-width: 99vw;
-    max-height: 99vh;
+    width: 99vw;
+    height: 90.5vh;
 }
 
 .container{
     display: flex;
     justify-content: center;
+    width: 99vw;
+    height: 90vh;
 }

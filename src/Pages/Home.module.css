@@ -20,3 +20,65 @@
 .logo > img{
     width: 100px;
 }
+
+.button{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 200px;
+    bottom: 300px;
+    gap: 10px;
+}
+
+.buy{
+    background-color: rgba(0, 0, 0, 0);
+    border: white 5px solid;
+    height: 100px;
+    width: 200px;
+    color: white;
+    font-weight: bolder;
+    font-size:30px;
+    transition: background-color ease-in-out 0.1s;
+}
+
+.buy:hover{
+    background-color: white;
+    border: none;
+    color: rgba(0,0,0,0.5);
+    transition: background-color ease-in-out 0.1s;
+}
+.membership{
+    border: none;
+    height: 100px;
+    width: 300px;
+    color: rgba(0,0,0,0.5);
+    background-color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    transition: background-color ease-in-out 0.1s;
+}
+
+.membership:hover{
+    border: white 5px solid;
+    color: white;
+    background-color: rgba(0,0,0,0);
+    transition: background-color ease-in-out 0.1s;
+}
+.para{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 200px;
+    color: white;
+    width:100%;
+    padding-left: 20px;
+}
+
+.title{
+    font-size: 100px;
+    margin-bottom: 50px;
+}
+
+.lines{
+    width: 40%;
+    font-size: 30px;
+}
