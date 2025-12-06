@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react"
 import styles from './Shop.module.css'
 import star from '../resources/star.png'
+import Product from "./Product"
 
 const Card = ({image,title,price,rating,count})=>{
     return(
         <div className={styles.card}>
-            <img src={image} alt="Image" />
+            <img src={image} alt="Image"  className={styles.img}/>
             <div>
                 <p className={styles.title}>{title}</p>
                 <div className={styles.priceDiv}>
-                    <p className={styles.price}> $ {price}</p>
+                    <p className={styles.price}> ${price}</p>
                     <div className={styles.ratingDiv}>
                         <img src={star} alt="star" className={styles.ratingImg} />
                         {rating}/{count}

@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+}
+
+.img{
+    max-width: 500px;
+}
+
+.title{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ratingDiv{
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ font-size: 30px;
+}
+
+.ratingDiv > img{
+    max-width: 30px;
+}
+
+.price{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.description{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.btn{
+    font-size: 40px;
+    border: solid black 5px;
+    background-color: rgba(0,0,0,0);
+    padding: 10px;
+    width: 300px;
+    margin-top: 50px;
+    font-weight: bolder;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+    transition: background-color ease-in-out 0.2s;
+    
+}
