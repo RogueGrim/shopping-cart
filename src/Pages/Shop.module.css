@@ -1,0 +1,58 @@
+.mainContainer{
+    margin: 50px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(5,minmax(200px,1fr));
+    gap: 50px;
+    margin-top: 50px;
+    justify-self: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover{
+    transform: scale(120%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card > img{
+    max-width: 300px;
+    max-height: 400px;
+}
+
+.title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.priceDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratingDiv{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.ratingImg{
+    max-width: 20px;
+}
