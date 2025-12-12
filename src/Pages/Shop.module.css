@@ -56,3 +56,7 @@
 .ratingImg{
     max-width: 20px;
 }
+
+.loading{
+    justify-self: center;
+}

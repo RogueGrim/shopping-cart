@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from './Shop.module.css'
 import star from '../resources/star.png'
-import Product from "./Product"
 
 const Card = ({image,title,price,rating,count})=>{
     return(
@@ -27,27 +26,34 @@ const Shop = ()=>{
 
     useEffect(()=>{
         const url = 'https://fakestoreapi.com/products'
-        fetch(url)
-        .then(response => response.json())
-        .then(response => setData(response))
-    })
+        try{    
+            fetch(url)
+            .then(response => response.json())
+            .then(response => setData(response))
+        }catch(error){
+            console.log(error)
+        }
+    },[])
     return(
         <section className={styles.mainContainer}>
             <h1>Our Stock</h1>
-            <div className={styles.container}>
-                {
-                    data.map((item)=>(
-                        <Card 
-                            key={item.id} 
-                            image={item.image} 
-                            title={item.title} 
-                            price={item.price} 
-                            rating={item.rating.rate} 
-                            count={item.rating.count}
-                        />
-                    ))
-                }
-            </div>
+            {
+                (!data) ? 
+                <div className={styles.container}>
+                    {  
+                        data.map((item)=>(
+                            <Card 
+                                key={item.id} 
+                                image={item.image} 
+                                title={item.title} 
+                                price={item.price} 
+                                rating={item.rating.rate} 
+                                count={item.rating.count}
+                            />
+                        ))
+                    }
+                </div>  : <h1 className={styles.loading}>Loading...</h1>
+            }
         </section>
     )
 }
