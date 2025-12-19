@@ -5,7 +5,7 @@ const Home = ()=>{
 
     return(
         <>
-            <Carosel/>
+            <Carosel/>{/*Rotating Images */}
             <div className={styles.para}>
                 <h1 className={styles.title}>
                     Shop With Us

@@ -10,6 +10,7 @@ const AboutUs = ()=>{
             <img  className={styles.img} src={stock} alt="" />
             <div className={styles.text}>
                 <h1>About Us</h1>
+                <span className={styles.span}></span>
                 <p>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -18,18 +19,19 @@ const AboutUs = ()=>{
                 </p>
 
                 <h1>Contact Us</h1>
+                <span className={styles.span}></span>
                 <div className={styles.contact}> 
                     <div>
                         <img src={phone} alt="" />
-                        <p>79909090</p>
+                        <p>(0)98756126</p>
                     </div>
                     <div>
                         <img src={email} alt="" />
-                        <p>Emial.com</p>
+                        <p>Email@email.com</p>
                     </div>
                     <div>
                         <img src={location} alt="" />
-                        <p>adrres,ass,2010</p>
+                        <p>address,street,pin-20020</p>
                     </div>
                 </div>
             </div>

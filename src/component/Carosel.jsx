@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from './Carosel.module.css'
-
+//component for roating images in the home page
 const Carosel = ()=>{
     const [ data, setData ] = useState([])
     const [ activeIndex,  setActiveIndex ] = useState(0)
