@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react"
 import styles from './Carosel.module.css'
+import { useOutletContext } from "react-router"
 //component for roating images in the home page
 const Carosel = ()=>{
-    const [ data, setData ] = useState([])
+    const {images} = useOutletContext()
+
     const [ activeIndex,  setActiveIndex ] = useState(0)
 
+
+    //effect fro infinte loop of images
     useEffect(()=>{
         const infiniteScroll = ()=>{
-            if(activeIndex == data.length-1){
+            if(activeIndex == images.length-1){
                 setActiveIndex(0)
             }else{
                 setActiveIndex(activeIndex+1)
@@ -18,19 +22,9 @@ const Carosel = ()=>{
         return ()=> clearInterval(interval)
     })
     
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            const url = 'https://picsum.photos/v2/list?page=1&limit=10'
-            const data = await fetch(url)
-            const res = await data.json()
-            setData(res)
-            console.log(res)
-        }
-        fetchData()
-    },[])
     return(
         <div className={styles.container}>
-            {data.map((img,index)=>(
+            {images.map((img,index)=>(
                 <img 
                     src={img.download_url} 
                     className={index == activeIndex ? styles.active : styles.img} 

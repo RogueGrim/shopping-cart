@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
 import styles from './Shop.module.css'
 import star from '../resources/star.png'
+import { useOutletContext } from 'react-router'
 
 const Card = ({image,title,price,rating,count})=>{
     return(
@@ -22,23 +22,13 @@ const Card = ({image,title,price,rating,count})=>{
 
 
 const Shop = ()=>{
-    const [ data, setData ] = useState([])
-
-    useEffect(()=>{
-        const url = 'https://fakestoreapi.com/products'
-        try{    
-            fetch(url)
-            .then(response => response.json())
-            .then(response => setData(response))
-        }catch(error){
-            console.log(error)
-        }
-    },[])
+    
+    const  {data}  = useOutletContext()
     return(
         <section className={styles.mainContainer}>
             <h1>Our Stock</h1>
             {
-                (!data) ? 
+                (data) ? 
                 <div className={styles.container}>
                     {  
                         data.map((item)=>(

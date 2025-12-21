@@ -1,11 +1,15 @@
 import styles from "./App.module.css"
 import img from'./resources/logo.svg'
-import Cart from "./Pages/Cart"
 import { useState,useEffect } from "react"
+import { Link, Outlet } from "react-router"
+
 function App() {
 
-    const [data, setData] = useState([]) 
+    const [data, setData] = useState([])
+    const [images, setImages] = useState([])
+    const [cart, setCart] = useState([])
 
+    //effect for fetching products for shop page
     useEffect(()=>{
         const url = 'https://fakestoreapi.com/products'
         try{    
@@ -16,6 +20,17 @@ function App() {
             console.log(error)
         }
     },[])
+
+    //effect for loading carosel images for the home page
+    useEffect(()=>{
+            const fetchData = async ()=>{
+                const url = 'https://picsum.photos/v2/list?page=1&limit=10'
+                const data = await fetch(url)
+                const res = await data.json()
+                setImages(res)
+            }
+            fetchData()
+        },[])
         
     return(
         <>       
@@ -24,15 +39,14 @@ function App() {
                     <img src={img} alt="Logo"/>
                     <h1>Shopify</h1>
                 </div>
-
-                <div className={styles.routes}>
-                    <h1>Home</h1>
-                    <h1>Shop</h1>
-                    <h1>About Us</h1>
-                    <h1>Cart</h1>
-                </div>
+                <nav className={styles.routes}>
+                    <Link  to={"/"}>Home</Link>
+                    <Link to={"/shop"}>Shop</Link>
+                    <Link to={"/aboutUs"}>About-Us</Link>
+                    <Link to={"/cart"}>Cart</Link>
+                </nav>
             </header>
-            { data.length != 0 ? <Cart data={[data[0],data[1]]}/> : <p>loading...</p>}
+            <Outlet context={{data, images, cart}}/>
         </>
     )
 }

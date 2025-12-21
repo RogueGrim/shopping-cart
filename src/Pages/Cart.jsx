@@ -1,3 +1,4 @@
+import { useOutletContext } from "react-router"
 import styles from "./Cart.module.css"
 
 const Card = ({info})=>{
@@ -18,13 +19,16 @@ const Card = ({info})=>{
     )
 }
 
-const Cart = ({data})=>{
+const Cart = ()=>{
+
+    const {cart} = useOutletContext()
+
     return(
         <section className={styles.container}>
             <div className={styles.cart}>
                 <h1>Cart</h1>
                 <span className={styles.span}></span>
-                { data.length == 0  ? <p>Cart is Empty!!!</p> : data.map( (e,i)=> <Card  key={i} info={e}/>) }
+                { cart.length == 0  ? <p>Cart is Empty!!!</p> : cart.map( (e,i)=> <Card  key={i} info={e}/>) }
             </div>
             <div className={styles.summary}>
                 <h1>Summary</h1>
@@ -32,7 +36,7 @@ const Cart = ({data})=>{
                 <p>No of items</p>
                 <div>
                     <p>Total:</p>
-                    <h1>${data.reduce((sum,item)=>sum + item.price,0)}</h1>
+                    <h1>${cart.reduce((sum,item)=>sum + item.price,0)}</h1>
                 </div>
                 <button className={styles.checkout}>CheckOut</button>
             </div>
