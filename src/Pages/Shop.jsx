@@ -1,11 +1,15 @@
 import styles from './Shop.module.css'
 import star from '../resources/star.png'
-import { useOutletContext } from 'react-router'
+import { Link, useOutletContext } from 'react-router'
 
-const Card = ({image,title,price,rating,count})=>{
+
+//component to render product cards on the shop page
+const Card = ({id,image,title,price,rating,count, onClick})=>{
     return(
         <div className={styles.card}>
-            <img src={image} alt="Image"  className={styles.img}/>
+            <Link to={'/product'} data-id={id} onClick={()=>onClick(id)}>
+                <img src={image} alt="Image"  className={styles.img}/>
+            </Link>
             <div>
                 <p className={styles.title}>{title}</p>
                 <div className={styles.priceDiv}>
@@ -20,10 +24,15 @@ const Card = ({image,title,price,rating,count})=>{
     )
 }
 
-
+//Shop component to hold the rendered product cards
 const Shop = ()=>{
     
-    const  {data}  = useOutletContext()
+    const  {data, setSelected}  = useOutletContext()
+
+    const onClick = (id)=>{
+        setSelected(data[id-1])
+    }
+
     return(
         <section className={styles.mainContainer}>
             <h1>Our Stock</h1>
@@ -33,12 +42,14 @@ const Shop = ()=>{
                     {  
                         data.map((item)=>(
                             <Card 
-                                key={item.id} 
+                                key={item.id}
+                                id={item.id} 
                                 image={item.image} 
                                 title={item.title} 
                                 price={item.price} 
                                 rating={item.rating.rate} 
                                 count={item.rating.count}
+                                onClick={onClick}
                             />
                         ))
                     }

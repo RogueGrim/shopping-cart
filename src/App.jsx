@@ -5,9 +5,10 @@ import { Link, Outlet } from "react-router"
 
 function App() {
 
-    const [data, setData] = useState([])
-    const [images, setImages] = useState([])
-    const [cart, setCart] = useState([])
+    const [data, setData] = useState([]) // state to manage product list
+    const [images, setImages] = useState([]) //state to manage images for carsel
+    const [cart, setCart] = useState([]) // state to manage cart items
+    const [selected, setSelected] = useState() //state for managing selected product
 
     //effect for fetching products for shop page
     useEffect(()=>{
@@ -46,7 +47,7 @@ function App() {
                     <Link to={"/cart"}>Cart</Link>
                 </nav>
             </header>
-            <Outlet context={{data, images, cart}}/>
+            <Outlet context={{data, images, cart, selected, setCart, setSelected}}/>
         </>
     )
 }

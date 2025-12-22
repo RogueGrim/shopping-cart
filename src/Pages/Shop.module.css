@@ -23,7 +23,7 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.card > img{
+.card a >img{
     max-width: 300px;
     max-height: 400px;
 }
@@ -54,7 +54,7 @@
 }
 
 .ratingImg{
-    max-width: 20px;
+    max-width: 10px;
 }
 
 .loading{
