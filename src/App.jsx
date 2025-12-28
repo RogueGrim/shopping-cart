@@ -44,7 +44,8 @@ function App() {
                     <Link  to={"/"}>Home</Link>
                     <Link to={"/shop"}>Shop</Link>
                     <Link to={"/aboutUs"}>About-Us</Link>
-                    <Link to={"/cart"}>Cart</Link>
+                    <Link to={"/cart"}>Cart</Link> 
+                    <p className={styles.count}>{cart.length}</p>
                 </nav>
             </header>
             <Outlet context={{data, images, cart, selected, setCart, setSelected}}/>

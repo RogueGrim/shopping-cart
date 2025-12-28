@@ -33,7 +33,7 @@ const Cart = ()=>{
             <div className={styles.summary}>
                 <h1>Summary</h1>
                 <span className={styles.span}></span>
-                <p>No of items</p>
+                <p>{cart.length} Items</p>
                 <div>
                     <p>Total:</p>
                     <h1>${cart.reduce((sum,item)=>sum + item.price,0)}</h1>

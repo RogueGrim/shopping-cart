@@ -5,6 +5,19 @@
 
 }
 
+.added{
+    background-color: white;
+    border: 5px black solid;
+    max-width: fit-content;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    right: 1000px;
+    bottom: 100px;
+}
+
 .img{
     max-width: 500px;
 }

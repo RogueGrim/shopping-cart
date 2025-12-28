@@ -1,12 +1,28 @@
 import styles from './Product.module.css'
 import img from '../resources/star.png'
 import { useOutletContext } from 'react-router'
+import { useEffect, useState } from 'react'
+
+const Added = ()=>{
+    return(
+        <div className={styles.added}>
+            <p>Added to Cart!</p>
+        </div>
+    )
+}
 
 const Product = ()=>{
     const {selected, setCart} = useOutletContext()
+    const [showAdded, setShowAdded] = useState(false)
+
+    useEffect(()=>{
+        setTimeout(()=>setShowAdded(false),1000)
+    },[showAdded])
 
     const onClick = ()=>{
         setCart((prev)=>[...prev,selected])
+        setShowAdded(true)
+
     }
 
     if(!selected) return <p>Loading...</p>
@@ -25,8 +41,9 @@ const Product = ()=>{
                 <div>    
                     <p className={styles.description}>{selected.description}</p>
                     <button className={styles.btn} onClick={onClick} >Add To Cart</button>
+                    {showAdded ? <Added/> : null}  
                 </div>
-            </div>    
+            </div>  
         </div>
     )
 }
