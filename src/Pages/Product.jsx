@@ -2,6 +2,7 @@ import styles from './Product.module.css'
 import img from '../resources/star.png'
 import { useOutletContext } from 'react-router'
 import { useEffect, useState } from 'react'
+import items from '../component/Class'
 
 const Added = ()=>{
     return(
@@ -20,7 +21,8 @@ const Product = ()=>{
     },[showAdded])
 
     const onClick = ()=>{
-        setCart((prev)=>[...prev,selected])
+        const item = new items(selected.id,selected,1)
+        setCart((prev)=>[...prev,item])
         setShowAdded(true)
 
     }

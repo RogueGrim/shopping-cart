@@ -27,7 +27,7 @@
     color: black;
 }
 
-a,a:visited,a:active{
+a,a:visited{
     text-decoration: none;
 }
 
@@ -41,4 +41,9 @@ a,a:visited,a:active{
     align-items: center;
     justify-content: center;
     border-radius: 25px;
+}
+
+.active{
+    border: 5px black solid;
+    padding: 5px;
 }

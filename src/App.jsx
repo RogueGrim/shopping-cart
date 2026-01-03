@@ -9,6 +9,19 @@ function App() {
     const [images, setImages] = useState([]) //state to manage images for carsel
     const [cart, setCart] = useState([]) // state to manage cart items
     const [selected, setSelected] = useState() //state for managing selected product
+    const [page, setPage] = useState('/') //state for managing selected page
+
+    function increment(index){
+        setCart((prev)=>[...prev,cart[index].quantity++])
+    }
+
+    function decrement(index){
+        setCart((prev)=>[...prev,cart[index].quantity--])
+    }
+
+    function remove(index){
+        setCart(cart.filter( (_,i) => i != index))
+    }
 
     //effect for fetching products for shop page
     useEffect(()=>{
@@ -41,14 +54,14 @@ function App() {
                     <h1>Shopify</h1>
                 </div>
                 <nav className={styles.routes}>
-                    <Link  to={"/"}>Home</Link>
-                    <Link to={"/shop"}>Shop</Link>
-                    <Link to={"/aboutUs"}>About-Us</Link>
-                    <Link to={"/cart"}>Cart</Link> 
+                    <Link to={"/"} onClick={()=>setPage('/')} className={page=='/' ? styles.active : null}>Home</Link>
+                    <Link to={"/shop"} onClick={()=>setPage('shop')} className={page=='shop' ? styles.active : null}>Shop</Link>
+                    <Link to={"/aboutUs"} onClick={()=>setPage('aboutUs')} className={page=='aboutUs' ? styles.active : null}>About-Us</Link>
+                    <Link to={"/cart"} onClick={()=>setPage('cart')} className={page=='cart' ? styles.active : null}>Cart</Link> 
                     <p className={styles.count}>{cart.length}</p>
                 </nav>
             </header>
-            <Outlet context={{data, images, cart, selected, setCart, setSelected}}/>
+            <Outlet context={{data, images, cart, selected, setCart, setSelected, increment, decrement, remove}}/>
         </>
     )
 }

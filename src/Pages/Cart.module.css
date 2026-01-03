@@ -30,7 +30,7 @@
 
 .cardTitle{
     max-width: 150px;
-    max-height: 100px;
+    max-height: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
 }

@@ -4,6 +4,7 @@ import email from "../resources/email.png"
 import phone from "../resources/phone.png"
 import location from "../resources/location.png"
 
+//AboutUs page component
 const AboutUs = ()=>{
     return(
         <section className={styles.container}>

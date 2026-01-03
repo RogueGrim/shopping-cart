@@ -6,10 +6,13 @@ import AboutUs from "../Pages/AboutUs"
 import Product from '../Pages/Product.jsx'
 import { createBrowserRouter } from "react-router"
 
+
+//router for page browsing
+
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<App/>,
+    element:<App/>, //parent component
     children:[
       {index:true , element:<Home/>},
       {path:'shop', element:<Shop/>},
