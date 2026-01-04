@@ -4,6 +4,7 @@ import Home from "../Pages/Home"
 import Shop from "../Pages/Shop"
 import AboutUs from "../Pages/AboutUs"
 import Product from '../Pages/Product.jsx'
+import Error from '../Pages/ErrorPage.jsx'
 import { createBrowserRouter } from "react-router"
 
 
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
   {
     path:'/',
     element:<App/>, //parent component
+    errorElement:<Error/>,
     children:[
       {index:true , element:<Home/>},
       {path:'shop', element:<Shop/>},

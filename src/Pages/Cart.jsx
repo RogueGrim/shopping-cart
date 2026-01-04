@@ -12,7 +12,7 @@ const Card = ({info,quantity,index, increment, decrement, remove})=>{
             </div>
             <div>
                 <button className={styles.quantity} data-id={index} onClick={(e)=>decrement(e.target.dataset.id)}>-</button>
-                <input type="number"  className={styles.itemNos} value={quantity}/>
+                <input type="number"  className={styles.itemNos} value={quantity} readOnly/>
                 <button className={styles.quantity} data-id={index} onClick={(e)=>increment(e.target.dataset.id)}>+</button>
             </div>
             <p>$ {info.price}</p>
