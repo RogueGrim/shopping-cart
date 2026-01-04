@@ -4,6 +4,7 @@ import { useOutletContext } from 'react-router'
 import { useEffect, useState } from 'react'
 import items from '../component/Class'
 
+// component to show added div on product page
 const Added = ()=>{
     return(
         <div className={styles.added}>
@@ -12,17 +13,32 @@ const Added = ()=>{
     )
 }
 
+
+//compent to display product page via the selected state
 const Product = ()=>{
     const {selected, setCart} = useOutletContext()
     const [showAdded, setShowAdded] = useState(false)
 
+    //effect for timeout for the added component div
     useEffect(()=>{
         setTimeout(()=>setShowAdded(false),1000)
     },[showAdded])
 
+
+
     const onClick = ()=>{
         const item = new items(selected.id,selected,1)
-        setCart((prev)=>[...prev,item])
+        setCart(prev => {
+            const exists = prev.find(item => item.id === selected.id)
+            if (exists) {
+                return prev.map(item =>
+                    item.id === selected.id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                    )
+            }
+            return [...prev, item]
+        })
         setShowAdded(true)
 
     }

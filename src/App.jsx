@@ -12,11 +12,11 @@ function App() {
     const [page, setPage] = useState('/') //state for managing selected page
 
     function increment(index){
-        setCart((prev)=>[...prev,cart[index].quantity++])
+        setCart(prev=> prev.map((prev,i)=> i == index ? {...prev,quantity: prev.quantity+1}: prev))
     }
 
     function decrement(index){
-        setCart((prev)=>[...prev,cart[index].quantity--])
+        setCart(prev => prev.map((prev,i)=> i == index ? {...prev,quantity: prev.quantity-1}: prev))
     }
 
     function remove(index){

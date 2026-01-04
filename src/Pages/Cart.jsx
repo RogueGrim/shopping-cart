@@ -12,7 +12,7 @@ const Card = ({info,quantity,index, increment, decrement, remove})=>{
             </div>
             <div>
                 <button className={styles.quantity} data-id={index} onClick={(e)=>decrement(e.target.dataset.id)}>-</button>
-                <input type="number"  className={styles.itemNos} value={quantity} readOnly/>
+                <input type="number"  className={styles.itemNos} value={quantity}/>
                 <button className={styles.quantity} data-id={index} onClick={(e)=>increment(e.target.dataset.id)}>+</button>
             </div>
             <p>$ {info.price}</p>
@@ -45,10 +45,10 @@ const Cart = ()=>{
             <div className={styles.summary}>
                 <h1>Summary</h1>
                 <span className={styles.span}></span>
-                <p>{cart.length} Items</p>
+                <p>{cart.length} Item(s)</p>
                 <div>
                     <p>Total:</p>
-                    <h1>${cart?.reduce((sum,items)=>sum + items.item.price*items.quantity,0)}</h1> {/* total price of cart */}
+                    <h1>${cart.reduce((sum,items)=>sum + items.item.price*items.quantity,0)}</h1> {/* total price of cart */}
                 </div>
                 <button className={styles.checkout}>CheckOut</button>
             </div>
