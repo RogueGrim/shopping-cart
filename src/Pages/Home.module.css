@@ -2,19 +2,19 @@
     display: flex;
     position: absolute;
     z-index: 1;
-    left: 200px;
-    bottom: 300px;
+    left: 20px;
+    bottom: 200px;
     gap: 10px;
 }
 
 .buy{
     background-color: rgba(0, 0, 0, 0);
-    border: white 5px solid;
-    height: 100px;
-    width: 200px;
+    border: white 2px solid;
+    height: 50px;
+    width: 100px;
     color: white;
     font-weight: bolder;
-    font-size:30px;
+    font-size:15px;
     transition: background-color ease-in-out 0.1s;
 }
 
@@ -26,11 +26,11 @@
 }
 .membership{
     border: none;
-    height: 100px;
-    width: 300px;
+    height: 50px;
+    width: 100px;
     color: rgba(0,0,0,0.5);
     background-color: white;
-    font-size: 30px;
+    font-size: 15px;
     font-weight: bolder;
     transition: background-color ease-in-out 0.1s;
 }
@@ -46,16 +46,18 @@
     position: absolute;
     top: 200px;
     color: white;
-    width:100%;
+    width:98vw;
+    overflow: hidden;
+    height: 300px;
     padding-left: 20px;
 }
 
 .title{
-    font-size: 100px;
-    margin-bottom: 50px;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 
 .lines{
     width: 40%;
-    font-size: 30px;
+    font-size: 15px;
 }

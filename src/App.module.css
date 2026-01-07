@@ -2,12 +2,12 @@
     display: flex;
     justify-content: space-between;
     height: 100px;
-    margin: 0 20px 0 20px;
+    padding: 0px 10px 0px 10px;
 }
 
 .routes{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .routes a{
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bolder;
     color: black;
 }
@@ -40,10 +40,11 @@ a,a:visited{
     gap: 10px;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .active{
     border: 5px black solid;
     padding: 5px;
+    border-radius: 5px;
 }
